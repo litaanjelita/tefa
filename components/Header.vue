@@ -17,6 +17,6 @@ img {
   width: 90px;
 }
 .content {
-  background-color: #89b6d6;
+  background-color: #EAC029;
 }
 </style>

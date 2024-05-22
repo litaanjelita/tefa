@@ -5,7 +5,7 @@
         <h2 class="text-center my-4" style="color: aliceblue;">ISI BUKU KUNJUNGAN</h2>
         <form>
           <div class="mb-3">
-            <input type="text" class="form-control form-control-lg rounded-5 text-white" placeholder="NAMA..."  />
+            <input type="text" class="form-control form-control-lg rounded-5 text-white" placeholder="NAMA"  />
           </div>
           <div class="mb-3">
             <select class="form-control form-control-lg form-select rounded-5 text-white">
@@ -75,15 +75,15 @@ form {
 .container-fluid {
   /* padding: 0;
     margin: 0; */
-  background-color: #658694;
+  background-image:url('assets/img/bg-cr-bk.jpg') ;
 }
 .form-control {
   /* padding: 0;
     margin: 0; */
-  background-color: #89b6d6;
+  background-color: #EAC029;
 }
 button {
-  background-color: #55acec;
+  background-color: #EAC029;
   align-items: center;
 }
 </style>

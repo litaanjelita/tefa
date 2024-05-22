@@ -5,7 +5,7 @@
             <nuxt-link to="/pengunjung/tambah">
                 <div class="card bg-pengunjung rounded-5">
                     <div class="card-body">
-                        <h2>pengunjung</h2>
+                        <h2  class="text-light">pengunjung</h2>
                     </div>
                 </div>
             </nuxt-link>
@@ -15,7 +15,7 @@
                 <nuxt-link to="/buku">
                 <div class="card bg-buku rounded-5">
                     <div class="card-body">
-                        <h2>cari buku</h2>
+                        <h2  class="text-light">cari buku</h2>
                     </div>
                 </div>
                 </nuxt-link>
@@ -28,7 +28,7 @@
                 <nuxt-link to="/pengunjung/index">
                 <div class="card pengunjung rounded-5">
                     <div class="card-body">
-                        <h2>Riwayat pengunjung</h2>
+                        <h1 class="text-center" style="margin-top: 80px;"> 1 pengunjung</h1>
                     </div>
                 </div>
                 </nuxt-link>
@@ -38,7 +38,7 @@
                 <nuxt-link to="/buku">
                 <div class="card buku rounded-5">
                     <div class="card-body">
-                        <h2>50 Buku</h2>
+                        <h1 class="text-center" style="margin-top: 80px;"> 4 buku</h1>
                     </div>
                 </div>
                 </nuxt-link>
@@ -51,7 +51,7 @@
 .container-fluid {
     /* padding: 0;
     margin: 0; */
-    background-color: #658694;
+    background-image: url('assets/img/bg-cr-bk.jpg');
 }
 .card {
     height: 250px;
@@ -69,10 +69,10 @@
 }
 
 .pengunjung {
-    background-color: #89B6D6;
+    background-color: #EAC029;
 }
 .buku {
-    background-color: #89B6D6;
+    background-color: #EAC029;
 }
 
 </style>

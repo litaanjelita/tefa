@@ -12,28 +12,28 @@
                     <div class="col-lg-2">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <img src="~/assets/img/cover1.jpg" class="cover" alt="cover 1" style="width: 100%;">
+                                <img src="../assets/img/cover1.jpg" class="cover" alt="cover 1" style="width: 100%;">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <img src="~/assets/img/cover2.jpg" class="cover" alt="cover 2" style="width: 100%;">
+                                <img src="../assets/img/cover2.jpg" class="cover" alt="cover 2" style="width: 100%;">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <img src="~/assets/img/cover3.jpeg" class="cover" alt="cover 3" style="width: 100%;">
+                                <img src="../assets/img/cover3.jpeg" class="cover" alt="cover 3" style="width: 100%;">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <img src="~/assets/img/cover4.jpg" class="cover" alt="cover 3" style="width: 100%;">
+                                <img src="../assets/img/cover4.jpg" class="cover" alt="cover 3" style="width: 100%;">
                             </div>
                         </div>
                     </div>
