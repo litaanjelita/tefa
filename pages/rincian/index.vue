@@ -33,20 +33,8 @@
                                 <option value="kembalikan">KEMBALIKAN BUKU</option>
                                 </select>
                         </div>
-                        
-
-                        <div v-if= "keanggotaan" == 'siswa' class="grup-option">
-                        <div class="col-lg">
-                            <select
-                                class="option-jurusan form-control form-control-lg rounded-5"
-                                >
-                                <option value=""></option>
-
-                                </select>
-                            </div>
-                        </div>
                     </div>
-                </form>
+               </form>
             </div>
         </div>
     </div>

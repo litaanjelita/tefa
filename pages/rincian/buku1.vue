@@ -6,7 +6,7 @@
                     <div class="card">
                         <h2 class="text-center mt-5">RINCIAN BUKU</h2>
                         <div class="container mt-5">
-                            <div class="row">
+                            <div class="row">  
                                 <div class="col-3 p-5">
                                     <img class="img-fluid" src="@/assets/img/cover1.jpg" alt="" style="width:250px;">
                                 </div>

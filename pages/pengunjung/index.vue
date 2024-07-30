@@ -1,30 +1,33 @@
-<template>
+ <template>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <nuxt-link to="/index"></nuxt-link>
+        <div class="row content">
+            <div class="col-lg-12">       
+                <nuxt-link to="/"></nuxt-link>
                 <h2 class="text-center my-4">RIWAYAT PENGUNJUNG</h2>
-                <div class="my-3">
-                    <input type="search" class="form-control-lg rounded-5 placeholder=Filter...">
+                <nuxt-link to="/">
+                        <i class="bi bi-caret-left-fill fs-1"></i>
+                    </nuxt-link>
+                <div class="row my-3 d-flex justify-content-center">
+                    <input type="search" class="col-lg-10 form-control- form-control-lg rounded-5" placeholder="Search..." style="background-color: #B2CDE1;">
                 </div>
-                <div class="my-3 text-muted">menampilkan 1 dari 1</div>
-                <table class="table">
+                <div class="my-3 text-muted"></div>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td>NO</td>
                             <td>NAMA</td>
-                            <td>Keanggotaan</td>
-                            <td>Waktu</td>
-                            <td>Keperluan</td>
+                            <td>KATEGORI</td>
+                            <td>WAKTU/TANGGAL</td>
+                            <td>KEPERLUAN</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>lita anjelita</td>
-                            <td>siswa</td>
-                            <td>09 juli 2024, 23.31.00</td>
-                            <td>baca</td>
+                        <tr v-for="(visitor,i) in visitors" :key="i">
+                            <td>{{ i+1 }}.</td>
+                            <td>{{ visitor.nama }}</td>
+                            <td>{{ visitor.keanggotaan.nama }}</td>
+                            <td>{{ visitor.tanggal }}, {{ visitor.waktu }}</td>
+                            <td>{{ visitor.keperluan.nama }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -32,3 +35,39 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const supabase = useSupabaseClient()
+
+const visitors = ref([])
+
+const getPengunjung = async () => {
+    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+    if(data) visitors.value = data
+}
+onMounted(() =>{
+    getPengunjung()
+})
+</script>
+
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+.content{
+    background-color: #658694;
+}
+td {
+    color: white;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+h2{
+    color: white;
+    font-family: "Irish Grover", system-ui;
+}
+
+.bi-caret-left-fill {
+    margin-left: 20px;
+}
+</style> 

@@ -25,7 +25,7 @@
         <div class="row py-5">
             <nuxt-link to="/pengunjung/index"></nuxt-link>
             <div class="col-lg-6">
-                <nuxt-link to="/pengunjung/index">
+                <nuxt-link to="/pengunjung">
                 <div class="card pengunjung rounded-5">
                     <div class="card-body">
                         <h1 class="text-center" style="margin-top: 80px;"> 1 pengunjung</h1>
@@ -51,20 +51,20 @@
 .container-fluid {
     /* padding: 0;
     margin: 0; */
-    background-image: url('assets/img/bg-cr-bk.jpg');
+    background-image: url('../assets/img/bg-cr-bk.jpg');
 }
 .card {
     height: 250px;
     box-shadow: 1px 1px 10px hsl(0, 0%, 100%)
 }
 .card.bg-pengunjung {
-    background-image: url('../assets/img/pengunjung.jpeg');
+    background-image: url('../assets/img/bg-bk-knj.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 .card.bg-buku {
-    background: url('../assets/img/cari buku.jpg') no-repeat center center;
+    background: url('../assets/img/bg-cr-bk.jpg') no-repeat center center;
     background-size: cover;
 }
 
