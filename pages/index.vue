@@ -28,7 +28,7 @@
                 <nuxt-link to="/pengunjung">
                 <div class="card pengunjung rounded-5">
                     <div class="card-body">
-                        <h1 class="text-center" style="margin-top: 80px;"> 1 pengunjung</h1>
+                        <h1 class="text-center" style="margin-top: 80px;"> {{ jmlpengunjung }} pengunjung</h1>
                     </div>
                 </div>
                 </nuxt-link>
@@ -38,7 +38,7 @@
                 <nuxt-link to="/buku">
                 <div class="card buku rounded-5">
                     <div class="card-body">
-                        <h1 class="text-center" style="margin-top: 80px;"> 4 buku</h1>
+                        <h1 class="text-center" style="margin-top: 80px;">{{ jmlbooks }} buku</h1>
                     </div>
                 </div>
                 </nuxt-link>
@@ -76,3 +76,42 @@
 }
 
 </style>
+
+<script setup>
+const supabase= useSupabaseClient()
+
+const keyword = ref('')
+const visitors = ref([])
+const jmlpengunjung= ref(0)
+const jmlbooks= ref(0)
+
+const getPengunjung =async () => {
+  const { data, error } = await supabase
+  .from('pengunjung')
+  .select(`*, keanggotaan(*), keperluan(*)`)
+  .ilike("nama",`%${keyword.value}%`)
+  .order('tanggal', { ascending: false})
+  if(data) visitors.value = data
+}
+
+const getJmlPengunjung = async () => {
+  const{ data, count } = await supabase
+    .from("pengunjung") 
+    .select('*', { count: "exact" })
+    if(data) jmlpengunjung.value = count
+}
+
+const getJmlBooks = async () => {
+  const{ data, count } = await supabase
+    .from("buku") 
+    .select('*', { count: "exact" })
+    if(data) jmlbooks.value = count
+}
+
+onMounted(() =>{
+  getPengunjung()
+  getJmlPengunjung()
+  getJmlBooks()
+})
+
+</script>

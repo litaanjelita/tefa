@@ -1,20 +1,22 @@
 <template>
     <div class="container-fluid">
-        <div class="row content">
+        <div class="row">
             <div class="col-lg-12">
                 <h2 class="text-center my-4 just" style="color: aliceblue;">RAK BUKU</h2>
+                <nuxt-link to="/">
+                    <button type="button" class="btn btn-warning mt-4 btn-lg">KEMBALI</button></nuxt-link>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-3">
                         <div class="my-3">
                             <select class="form-select" aria-label="Default select example"
-                                style="box-shadow: 2px px px px px #424242;">
-                                <option v-for="(kategori) in kategories" :key="kategori.id" :value="kategori.nama">{{ kategori.nama }}</option>
+                                style="box-shadow: 2px px px px px #424242;background-color: #EAC029;">
+                                <option v-for="(kategori) in kategories" :key="kategori.id" :value="kategori.nama">{{ kategori.nama }} </option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <form @submit.prevent="getBooks" class="my-3">
-                            <input v-model="keyword" type="search" class="form-control rounded-5 cari" placeholder="SEARCH?..." style="background-color: #B0CFE5;">
+                            <input v-model="keyword" type="search" class="form-control rounded-5 cari" placeholder="SEARCH?..." style="background-color: #EAC029;">
                         </form>
                     </div>
                 </div>
@@ -61,6 +63,7 @@ const getKategori = async () => {
     if (data) kategories.value = data
 }
 
+
 onMounted(() => {
   getBooks()
   getKategori()
@@ -69,8 +72,10 @@ onMounted(() => {
 
 <style scoped>
 
-.content {
-    background-color: #658694;
+.container-fluid {
+    background: url("../../assets/img/bg-cr-bk.jpg");
+    background-size: cover;
+    width: 100%;
 }
 
 /* .cari{
@@ -80,9 +85,9 @@ onMounted(() => {
     height: 50%;
     width: 50%;
 } */
-.layer {
+/* .layer {
     background-color: #89B6D6;
-}
+} */
 
 h2{
     color: white;

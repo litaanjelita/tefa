@@ -195,17 +195,18 @@ form {
   font-style: normal;
 }
 .container-fluid {
-  /* padding: 0;
-    margin: 0; */
-  background-color: #658694;
+    background: url("../../assets/img/bg-cr-bk.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 .form-control {
   /* padding: 0;
     margin: 0; */
-  background-color: #89b6d6;
+  background-color: #EAC029;
 }
 button {
-  background-color: #55acec;
+  background-color: #EAC029;
   align-items: center;
 }
 </style>

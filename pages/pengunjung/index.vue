@@ -1,14 +1,13 @@
- <template>
+<template>
     <div class="container-fluid">
         <div class="row content">
             <div class="col-lg-12">       
-                <nuxt-link to="/"></nuxt-link>
                 <h2 class="text-center my-4">RIWAYAT PENGUNJUNG</h2>
                 <nuxt-link to="/">
-                        <i class="bi bi-caret-left-fill fs-1"></i>
-                    </nuxt-link>
+                    <button type="button" class="btn btn-warning mt-4 btn-lg">KEMBALI</button></nuxt-link>
+            </div>
                 <div class="row my-3 d-flex justify-content-center">
-                    <input type="search" class="col-lg-10 form-control- form-control-lg rounded-5" placeholder="Search..." style="background-color: #B2CDE1;">
+                    <input type="search" class="col-lg-10 form-control- form-control-lg rounded-5" placeholder="Search..." style="background-color: #EAC029;">
                 </div>
                 <div class="my-3 text-muted"></div>
                 <table class="table table-bordered">
@@ -33,7 +32,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    
 </template>
 
 <script setup>
@@ -42,7 +41,8 @@ const supabase = useSupabaseClient()
 const visitors = ref([])
 
 const getPengunjung = async () => {
-    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+    const { data, error } = await supabase
+    .from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
     if(data) visitors.value = data
 }
 onMounted(() =>{
@@ -53,8 +53,10 @@ onMounted(() =>{
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
-.content{
-    background-color: #658694;
+.container-fluid {
+    background: url("../../assets/img/bg-cr-bk.jpg");
+    background-size: cover;
+    width: 100%;
 }
 td {
     color: white;
